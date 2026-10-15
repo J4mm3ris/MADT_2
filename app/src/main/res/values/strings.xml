@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MADT_2</string>
+    <string name="btn1_default">Count</string>
+    <string-array name="spn1_choices">
+        <item>Sentences</item>
+        <item>Words</item>
+        <item>Chars</item>
+        <item>Numbers</item>
+    </string-array>
 </resources>

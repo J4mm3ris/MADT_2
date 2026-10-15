@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MADT_2</string>
     <string name="btn1_default">Count</string>
+    <string name="tv1_default">Press count to count</string>
+    <string name="tv2_default">What would you like to count?:</string>
     <string-array name="spn1_choices">
         <item>Sentences</item>
         <item>Words</item>

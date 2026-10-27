@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "MADT_2"
 include(":app")
- 

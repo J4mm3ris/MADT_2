@@ -21,6 +21,28 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static int count(int pos, String input){
+        if(input.isEmpty()) {
+            return -1;
+        }
+        else{
+            int count;
+            if(pos == 0){
+                count = input.split("[.!?]").length;
+
+            }else if(pos == 1){
+                count = input.split("[\\s]").length;
+
+            }else if(pos == 2){
+                count = input.length();
+
+            }else{
+                count = input.split("\\d", -1).length-1;
+            }
+
+            return count;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,30 +72,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String enteredText = text.getText().toString();
+                int pos = spinner.getSelectedItemPosition();
 
-                if(enteredText.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Input field is empty", Toast.LENGTH_SHORT).show();
-                    tv.setText("ErRoR");
+                int result=count(pos, enteredText);
+
+                if(result!=-1){
+                    tv.setText("The count is "+ result);
                 }
                 else{
-                    int pos = spinner.getSelectedItemPosition();
-                    int count;
-                    if(pos == 0){
-                        count = enteredText.split("[.!?]").length;
-
-                    }else if(pos == 1){
-                        count = enteredText.split("[\\s,.]").length;
-
-                    }else if(pos == 2){
-                        count = enteredText.length();
-
-                    }else{
-                        count = enteredText.split("\\d", -1).length-1;
-
-                    }
-
-                    tv.setText("The count is "+ count);
-
+                    Toast.makeText(MainActivity.this, "Input field is empty", Toast.LENGTH_SHORT).show();
+                    tv.setText("ErRoR");
                 }
             }
         });
